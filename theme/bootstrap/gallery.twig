@@ -1,0 +1,43 @@
+{% extends 'layout.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ paths.theme }}stylesheets/fancybox/jquery.fancybox.css" rel="stylesheet">
+{% endblock %}
+
+{% block slides %}
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>{{ record.title }}</h2>
+                    </div>
+
+                    {% for key,value in record.values if key not in ['id', 'slug', 'datecreated', 'datechanged', 'datepublish', 'datedepublish', 'username', 'status', 'title', 'subtitle', 'ownerid'] %}
+
+                            {% if record.fieldtype(key) == "imagelist" and value != "" %}
+                                {% set list = attribute(record, key) %}
+
+                                {% for item in list %}
+                                   <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <a class="thumbnail fancybox"  data-fancybox-group="gallery" href="{{ image(item.filename) }}">
+                                            <img class="img-responsive" src="{{ thumbnail(item.filename, 400,300) }}">
+                                        </a>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ paths.theme }}javascripts/jquery.fancybox.pack.js"></script>
+    <script src="{{ paths.theme }}javascripts/jquery.fancybox-media.js"></script>
+{% endblock %}

@@ -1,59 +1,89 @@
 <!-- Sidebar -->
 
-<aside class="sidebar">
+<aside class="sidebar" style="font-size: 14px">
 
-    <div class="panel panel-default">
-      <div class="panel-body">
-        {# The next section attempts to fill the panel in the sidebar with part of the
-           'about'-page, if it exists. First, attempt to fetch a page with slug 'about' #}
-        {% setcontent about = "page/about" %}
+    <div class="widget">
+        <h5>KONTAKTI</h5>
+        <table class="table table-hover">
+            <tr>
+                <th>E-MAIL</th>
+                <th>TELEFON</th>
+            </tr>
+            <tr>
+                <td><a href="mailto:nezahafner1@gmail.com">Neža Hafner Vrtačič</a></td>
+                <td>041 914 314</td>
+            </tr>
+            <tr>
+                <td><a href="mailto:sport10.00@gmail.com">Jože Vrtačič</a></td>
+                <td>041 884 860</td>
+            </tr>
+            <tr>
+                <td><a href="mailto:tatjana1.likar@gmail.com">Tatjana Hafner</a></td>
+                <td>040 163 788</td>
+            </tr>
+            <tr>
+                <td><a href="mailto:">Matija Šestak</a></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div class="widget">
+        <h5>TERMINI TRENINGOV</h5>
+        {% setcontent items = 'termini' %}
 
-        {# check if we have a title. If so, we know we have a page. Otherwise, still
-           print a text, telling us to create the 'about' page. #}
-        {% if about.title is defined %}
-
-            <h5>{{ about.title }}</h5>
-            {{ about.teaser }}
-
-            <a href="{{ about.link }}">{{ __('Read more') }} &raquo;</a>
-
-        {% else %}
-
-            <h5>{{ __('Alas, no about!') }}</h5>
-
-            <p>{{ __("If there was a Page with 'about' for a slug, it would've been shown here. But there isn't one, so that's why you're seeing this placeholder.") }}</p>
-
-        {% endif %}
-      </div>
+        {% for item in items %}
+            {{ item.body }}
+        {% endfor %}
     </div>
 
-    {# The next section iterates over all of the contenttypes, and prints a list
-       of the five latest records of each of them. The 'magic' happens in the
-       setcontent tag.. ct.slug ~ "/latest/5" contatenates the slug ot the
-       contenttype with /latest/5, so it becomes something like "pages/latest/5".
-       The 'else' in the inner for-loop is only used if there are no 'records',
-       so we can use it to print a helpful message.
-       Lastly, "{{ paths.root }}{{ct.slug}}" will output something like '/pages',
-       effectively creating a working link to that contenttpye's listing page.#}
+    <div class="widget">
+        <h5>ZADNJE NOVICE</h5>
 
-    {% for ct in app.config.get('contenttypes') %}
-
-        {% setcontent records = ct.slug ~ "/latest/5" %}
-
-        <h5>{{ __('Recent %contenttypes%',{'%contenttypes%': ct.name }) }}</h5>
-        <ul>
-            {% for record in records %}
-                <li><a href="{{ record.link }}">{{ record.title }}</a></li>
-            {% else %}
-                <li>{{ __('No recent %contenttype%.',{'%contenttype%': ct.singular_name }) }}</li>
+        {% setcontent items = 'novice/latest/5' %}
+        <ul class="list-group">
+            {% for item in items %}
+                <li>
+                    <a href="{{ item.link }}">{{ item.title|upper }}</a>,
+                    {{ item.datepublish|date("d.m.Y") }}
+                </li>
             {% endfor %}
         </ul>
-        <p><a href="{{ paths.root }}{{ct.slug}}">{{ __('%contenttypes% overview',{'%contenttypes%':ct.name }) }} &raquo;</a></p>
+    </div>
 
+    <div class="widget">
+        <h5>ZADNJE GALERIJE</h5>
 
-    {% endfor %}
+        {% setcontent items = 'galerije/latest/5' %}
+        <table class="table">
+        {% for item in items %}
+            <tr>
+                <td>
+                    {% for image in item.imagelist|slice(0,1) %}
 
+                        <img class="img-thumbnail" src="{{ thumbnail(image, 100,100) }}">
 
+                    {% endfor %}
+                </td>
+                <td>
+                    <a href="{{ item.link }}">{{ item.title|upper }}</a>,
+                    {{ item.datepublish|date("d.m.Y") }}
+
+                    {%  set imgCount = item.imagelist|length %}
+                    {% if imgCount == 1 %}
+                        <span>(1 slika)</span>
+                    {% elseif imgCount == 2 %}
+                        <span>(2 sliki)</span>
+                    {% elseif imgCount > 2 and imgCount < 5 %}
+                        <span>({{ imgCount }} slike)</span>
+                    {% else %}
+                        <span>({{ imgCount }} slik)</span>
+                    {% endif %}
+                    <div>
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
 </aside>
 
 <!-- End Sidebar -->

@@ -122,3 +122,8 @@ contentlisting:
 # templatebinding:
 #   path:     /static-page/
 #   defaults: { _controller: 'Bolt\Controllers\Frontend::template', template: 'static-page' }
+
+pagebinding:
+  path:           /{slug}
+  defaults:       { _controller: 'Bolt\Controllers\Frontend::record', 'contenttypeslug': 'page' }
+  contenttype:    pages

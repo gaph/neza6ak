@@ -7,9 +7,6 @@
 @import url('font-awesome.css');
 /* === custom icon === */
 @import url('custom-fonts.css');
-/* ==== overwrite bootstrap standard ==== */
-@import url('overwrite.css');
-@import url('animate.css');
 
 /* ===================================
 1. General
@@ -17,10 +14,11 @@
 
 body {
 	font-family:'Open Sans', Arial, sans-serif;
-	font-size:14px;
+	font-size:16px;
 	font-weight:300;
 	line-height:1.6em;
 	color:#656565;
+    background-color: #f0eef5;
 }
 
 a:active {
@@ -56,7 +54,7 @@ h1,h2, h3, h4, h5, h6 {
 
 
 .row,.row-fluid {
-	margin-bottom:30px;
+	margin-bottom:20px;
 }
 
 .row .row,.row-fluid .row-fluid{
@@ -122,11 +120,6 @@ header .navbar {
     margin-top: 10px;
     border-bottom: none;
 }
-
-.navbar-header img{
-    margin-top: -5px;
-}
-
 
 header .navbar-collapse  ul.navbar-nav {
     float: right;
@@ -394,11 +387,14 @@ section.callaction {
 	width: 100%;
 }
 .box-gray  {
-	background: #f8f8f8;
+	background: #fff;
 	padding: 20px 20px 30px;
+    min-height: 265px;
 }
 .box-gray  h4,.box-gray  i {
-	margin-bottom: 20px;
+	margin-bottom: 0px;
+    min-height: 80px;
+    font-size: 14px;
 }
 .box-bottom {
 	padding: 20px 0;
@@ -1803,6 +1799,12 @@ article img.pull-right, article .align-right{
 ============================= */
 
 @media (min-width: 768px) and (max-width: 979px) {
+    #long-title{
+        display: none;
+    }
+    #short-title{
+        display: inline;
+    }
 
 
 
@@ -1840,9 +1842,7 @@ article img.pull-right, article .align-right{
 
 @media (max-width: 767px) {
 
-    #short-title{
-        display: inline;
-    }
+
 
     #long-title{
         display: none;
@@ -1965,9 +1965,6 @@ article img.pull-right, article .align-right{
 }
 
 @media (max-width: 480px) {
-    #long-title{
-        display: none;
-    }
 
 	.bottom-article a.pull-right {
 		float:left;
@@ -2000,4 +1997,42 @@ article img.pull-right, article .align-right{
 
 @media (max-width: 360px) {
 
+}
+#description{
+    text-align: justify;
+}
+.alert-danger-pink{
+    padding: 15px;
+    background-color: #be6cb8;
+    border-color: #be6cb8;
+    color: #fff;
+}
+.thumb{
+    margin-bottom: 10px
+}
+
+.sidebar ul{
+    list-style:none;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.sidebar ul{
+    margin-left: 10px;
+}
+
+#contacts span {
+    padding: 5px;
+    font-size: 18px;
+}
+
+.box-bottom {
+    background: #a1c36d;
+    color: #fff;
+    font-size: 20px;
+}
+
+.navbar-brand>img{
+    display: inline;
 }

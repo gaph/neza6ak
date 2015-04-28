@@ -36,6 +36,29 @@ pages:
     taxonomy: [ chapters ]
     recordsperpage: 100
 
+novice:
+    name: Novice
+    singular_name: Novica
+    record_template: news.twig
+    listing_template : news_list.twig
+    fields:
+        title:
+            type: text
+            class: large
+            group: content
+        slug:
+            type: slug
+            uses: title
+        image:
+            type: image
+        teaser:
+            type: html
+            height: 150px
+        body:
+            type: html
+            height: 300px
+    taxonomy: [ chapters ]
+    recordsperpage: 10
 
 # Entries can be used for things like 'news' or 'blogpostings'. They have a 'teaser',
 # which can be used for a short blurb on listing-pages, allowing visitors to
@@ -204,3 +227,51 @@ showcases:
 
 
 # number (deprecated) - input type decimal(18,9), useful for storing number that need to be sortable
+
+slides:
+  name: Slides
+  singular_name: Slide
+  fields:
+    title:
+      type: text
+      group: content
+    image:
+      type: image
+      extensions: [ gif, jpg, png ]
+      group: content
+
+galerije:
+    name: Galerije
+    singular_name: galerija
+    record_template: gallery.twig
+    listing_template : gallery_list.twig
+    fields:
+      title:
+          type: text
+          class: large
+          group: content
+      slug:
+          type: slug
+          uses: title
+      imagelist:
+          type: imagelist
+      teaser:
+          type: html
+          height: 150px
+    recordsperpage: 10
+    
+termini:
+    name: Termini
+    singular_name: termin
+    recordsperpage: 10
+    fields:
+      title:
+          type: text
+          class: large
+          group: content
+      slug:
+          type: slug
+          uses: title
+      body:
+          type: html
+          height: 300px

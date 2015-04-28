@@ -5,20 +5,17 @@ main:
   - label: Domov
     title: Domov.
     path: homepage
+  - label: Novice
+    title: Novice.
+    path: novice
   - label: Trenerji
     title: Trenerji
-    path: page/trenerji
+    path: trenerji
     class: first
-  - label: Galerija
-    title: Galerija
-    path: page/galerija
-  - label: Tekmovanja
-    title: Tekmovanja
-    path: page/tekmovanja
-  - label: Rezultati
-    title: Rezultati
-    path: page/rezultati
+  - label: Galerije
+    title: Galerije
+    path: galerije
   - label: Kje smo
     title: Kje smo
-    path: page/kje-smo
+    path: kje-smo
     class: last

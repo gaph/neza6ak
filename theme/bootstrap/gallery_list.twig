@@ -1,0 +1,41 @@
+{% extends 'layout.twig' %}
+{% block slides %}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            {% for record in records %}
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2><a href="{{ record.link }}">{{ record.title|upper }}</a></h2>
+                        <p>Objavljeno: {{ record.datepublish|date("d.m.Y") }} </p>
+                        {%  set imgCount = record.imagelist|length %}
+                        {% if imgCount == 1 %}
+                            <span>(1 slika)</span>
+                        {% elseif imgCount == 2 %}
+                            <span>(2 sliki)</span>
+                        {% elseif imgCount > 2 and imgCount < 5 %}
+                            <span>({{ imgCount }} slike)</span>
+                        {% else %}
+                            <span>({{ imgCount }} slik)</span>
+                        {% endif %}
+                    </div>
+
+                    {% for image in record.imagelist|slice(0,4) %}
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                            <img class="img-thumbnail img-responsive" src="{{ thumbnail(image, 400,300) }}">
+                        </div>
+                    {% endfor %}
+                </div>
+
+            {% endfor %}
+
+            {{ pager() }}
+        </div>
+        <div class="col-lg-4">
+            {% include '_aside.twig' %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -53,8 +53,8 @@ cron_hour: 3
 # with. Note: If you've changed the filename, and your changes do not show up on
 # the website, be sure to check for a config.yml file in your theme's folder. If
 # a template is set there, it will override the setting here.
-homepage: page/1
-homepage_template: index.twig
+homepage: page/domov
+homepage_template: home.twig
 
 # The default content for the 404 page. Uses the 'record_template' template by default.
 # Make sure this is set to an existing record, otherwise visitors will get an error-page
@@ -141,7 +141,7 @@ thumbnails:
   save_files: false
   allow_upscale: false
   exif_orientation: true
-#  browser_cache_time: 2592000
+  browser_cache_time: 2592000
 
 # Define the HTML tags and attributes that are allowed in 'cleaned' HTML. This
 # is used for sanitizing HTML, to make sure there are no undesirable elements
