@@ -7,7 +7,7 @@ database:
   databasename: bolt
 
 # The name of the website
-sitename: Športno društvo Neža6ak
+sitename: Športno društvo Neža
 payoff: 
 
 # The theme to use. Be sure to copy the {theme_path}/base-2014 folder, and change the
@@ -20,7 +20,7 @@ theme: bootstrap
 # In some cases it may be needed to specify (non-standard) variations of the locale
 # to get everything to work as desired. This can be done as [nl_NL, Dutch_Netherlands]
 # When specifying multiple locale, make sure the first is a standard locale
-locale: en_GB
+locale: si_SI
 #timezone: UTC
 
 # Set maintenance mode true or false

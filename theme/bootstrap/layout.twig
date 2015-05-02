@@ -24,18 +24,11 @@
         <link rel="stylesheet" href="{{ paths.theme }}stylesheets/style.css">
     {% endblock %}
 
-
-
-
-
-
-
-
     {#<!-- A variable from the theme's config: {{ theme.foo }} -->#}
 
     <meta property="og:title" content="{{ app.config.get('general/sitename') }}"/>
-    <meta property="og:site_name" content="My Favorite News"/>
-    <meta property="og:url" content="http://www.myfavnews.com/2013/1/1/workday-price-range"/>
+    <meta property="og:site_name" content="{{ app.config.get('general/sitename') }}"/>
+    <meta property="og:url" content="http://www.neza6ak.si"/>
     <meta property="og:description" content="Workday, a provider of cloud-based
             applications for human resources, said on Monday that it would seek to price
             its initial public offering at $21 to $24 a share.  At the midpoint of that
@@ -45,7 +38,7 @@
             David Duffield, the founder of PeopleSoft, and Aneel Bhusri, who was chief
             strategist at PeopleSoft, will have 67 percent of the voting rights after
             the I.P.O., according to the prospectus."/>
-    <meta property="og:locale" content="en_US"/>
+    <meta property="og:locale" content="si_SI"/>
     <meta property="og:image" content="http://graphics.myfavnews.com/images/logo-100x100.jpg"/>
 
 </head>
@@ -61,9 +54,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="{{ hompage }}">
                         <img height="60px" src="{{ paths.theme }}/images/logo.png"/>
-                        <span id="long-title">Športno društvo</span> <span id="short-title">ŠD</span> Neža6ak</a>
+                        <span id="long-title">Športno društvo</span> <span id="short-title">ŠD</span> Neža</a>
                 </div>
                 <div class="collapse navbar-collapse" style="">
                     <ul class="nav navbar-nav">

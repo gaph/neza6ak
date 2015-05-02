@@ -1,0 +1,85 @@
+{% extends 'layout.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ paths.theme }}stylesheets/fancybox/jquery.fancybox.css" rel="stylesheet">
+{% endblock %}
+
+{% block slides %}
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>Trenerji športnega društva Neža</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="avatar">
+                                <img src="" alt="" />
+                            </div>
+                            <div class="content">
+                                <h3>Neža Hafner Vrtačič</h3>
+                                <ul>
+                                    <li>Predsednica društva,</li>
+                                    <li>univerzitetna profesorica razrednega pouka,</li>
+                                    <li>bivša aktivna tekmovalka v atletiki,</li>
+                                    <li>vaditelj atletike,</li>
+                                    <li>učiteljica smučanja 1.stopnje,</li>
+                                    <li>učiteljica plavanja.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="avatar">
+                                <img src="" alt="" />
+                            </div>
+                            <div class="content">
+                                <h3>Jože Vrtačič</h3>
+                                <ul>
+                                    <li>Vaditelj atletike,</li>
+                                    <li>bivši reprezentant Slovenije,</li>
+                                    <li>olimpijec,</li>
+                                    <li>vaditelj atletike.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="avatar">
+                                <img src="" alt="" />
+                            </div>
+                            <div class="content">
+                                <h3>Tatjana Hafner</h3>
+                                <ul>
+                                    <li>Vaditelj atletike,</li>
+                                    <li>vzgojiteljica predšolskih otrok.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                {% include '_aside.twig' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ paths.theme }}javascripts/jquery.fancybox.pack.js"></script>
+    <script src="{{ paths.theme }}javascripts/jquery.fancybox-media.js"></script>
+{% endblock %}

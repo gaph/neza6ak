@@ -2035,4 +2035,14 @@ article img.pull-right, article .align-right{
 
 .navbar-brand>img{
     display: inline;
+    margin-top: -5px;
+}
+
+ul.news{
+    list-style: none;
+}
+
+table#trainers span{
+    display: block;
+    margin-top: 12px;
 }
