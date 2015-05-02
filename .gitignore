@@ -4,4 +4,3 @@ extensions/vendor
 app/database/*
 thumbs/
 vendor/
-files/*
