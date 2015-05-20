@@ -40,4 +40,14 @@
 
     <script src="{{ paths.theme }}javascripts/jquery.fancybox.pack.js"></script>
     <script src="{{ paths.theme }}javascripts/jquery.fancybox-media.js"></script>
+    <script>
+        /*global jQuery:false */
+        jQuery(document).ready(function($) {
+            "use strict";
+            $(".fancybox").fancybox({
+                padding : 0,
+                autoResize: true
+            });
+        });
+    </script>
 {% endblock %}
