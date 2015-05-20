@@ -23,7 +23,7 @@
                                 {% for item in list %}
                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                                         <a class="thumbnail fancybox"  data-fancybox-group="gallery" href="{{ image(item.filename) }}">
-                                            <img class="img-responsive" src="{{ thumbnail(item.filename, 400,300) }}">
+                                            <img class="img-responsive" src="{{ thumbnail(item.filename, 400,300, "c") }}">
                                         </a>
                                     </div>
                                 {% endfor %}
