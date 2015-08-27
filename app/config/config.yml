@@ -324,7 +324,7 @@ extensions:
 # by default but can be relocated. This case you should define theme_path accordingly.
 # Make sure the path exists, and be aware that you'll get a new 'theme' folder on any
 # subsequent Bolt update. Changing this setting is not advised.
-theme_path: bootstrap
+# theme_path: theme
 
 # If you want Bolt installation get news through a proxy
 #httpProxy:
